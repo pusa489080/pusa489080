@@ -1,0 +1,23 @@
+splode(seeds[i].x,seeds[i].y,seeds[i].z);
+			seeds.splice(i,1);
+		}
+	}
+	for(i=0;i<sparks.length;++i){
+		if(sparks[i].alpha>0 && sparks[i].radius>5){
+			sparks[i].alpha-=.01;
+			sparks[i].radius/=1.02;
+			sparks[i].vy+=gravity;
+			point=new Object();
+			point.x=sparks[i].x;
+			point.y=sparks[i].y;
+			point.z=sparks[i].z;
+			if(sparks[i].trail.length){
+				x=sparks[i].trail[sparks[i].trail.length-1].x;
+				y=sparks[i].trail[sparks[i].trail.length-1].y;
+				z=sparks[i].trail[sparks[i].trail.length-1].z;
+				d=((point.x-x)*(point.x-x)+(point.y-y)*(point.y-y)+(point.z-z)*(point.z-z));
+				if(d>9){
+					sparks[i].trail.push(point)
+————————————————
+版权声明：本文为CSDN博主「论恒」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/m0_66674794/article/details/125162172
