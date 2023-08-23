@@ -1,0 +1,4 @@
+  BillingInfo inBillingInfo) 
+  throws ContentException 
+  { 
+    // Update content binary, binary MIME type 
